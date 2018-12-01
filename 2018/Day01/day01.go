@@ -2,7 +2,7 @@ package Day01
 
 import "strconv"
 
-func sumItUp(input [] string) int {
+func sumItUp(input []string) int {
 	sum := 0
 
 	for _, i := range input {
