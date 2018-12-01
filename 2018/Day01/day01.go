@@ -14,22 +14,20 @@ func sumItUp(input []string) int {
 }
 
 func getFirstFrequency(input []string) int {
+	sum := 0
+
 	reached := map[int]struct{}{
 		0: struct{}{},
 	}
 
-	return getFirstFrequencyReq(input, 0, reached)
-}
-
-func getFirstFrequencyReq(input []string, sum int, reached map[int]struct{}) int {
-	for _, i := range input {
-		num, _ := strconv.Atoi(i)
-		sum += num
-		if _, ok := reached[sum]; ok {
-			return sum
+	for {
+		for _, i := range input {
+			num, _ := strconv.Atoi(i)
+			sum += num
+			if _, ok := reached[sum]; ok {
+				return sum
+			}
+			reached[sum] = struct{}{}
 		}
-		reached[sum] = struct{}{}
 	}
-
-	return getFirstFrequencyReq(input, sum, reached)
 }
