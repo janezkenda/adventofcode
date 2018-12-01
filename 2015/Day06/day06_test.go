@@ -1,7 +1,6 @@
 package Day06
 
 import (
-	"fmt"
 	"testing"
 
 	"adventofcode/util"
@@ -16,7 +15,7 @@ func Test_Day06_Part1(t *testing.T) {
 		g.set(parseLine(line))
 	}
 
-	fmt.Println(g.count())
+	t.Log(g.count())
 }
 
 func Test_Day06_Part2(t *testing.T) {
@@ -28,5 +27,5 @@ func Test_Day06_Part2(t *testing.T) {
 		ig.set(parseLine(line))
 	}
 
-	fmt.Println(ig.count())
+	t.Log(ig.count())
 }

@@ -1,9 +1,6 @@
 package Day02
 
-import (
-	"fmt"
-	"testing"
-)
+import "testing"
 
 func Test_Day02_Part1(t *testing.T) {
 	data := prepareData()
@@ -12,7 +9,7 @@ func Test_Day02_Part1(t *testing.T) {
 	for _, d := range data {
 		totalPaper += d.getPaperAmt()
 	}
-	fmt.Println(totalPaper)
+	t.Log(totalPaper)
 }
 
 func Test_Day02_Part2(t *testing.T) {
@@ -22,5 +19,5 @@ func Test_Day02_Part2(t *testing.T) {
 	for _, d := range data {
 		totalRibbon += d.getRibbonAmt()
 	}
-	fmt.Println(totalRibbon)
+	t.Log(totalRibbon)
 }

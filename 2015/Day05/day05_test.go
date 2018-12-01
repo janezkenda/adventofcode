@@ -1,7 +1,6 @@
 package Day05
 
 import (
-	"fmt"
 	"testing"
 
 	"adventofcode/util"
@@ -18,7 +17,7 @@ func Test_Day05_Part1(t *testing.T) {
 		}
 	}
 
-	fmt.Println(count)
+	t.Log(count)
 }
 
 func Test_Day05_Part2(t *testing.T) {
@@ -32,5 +31,5 @@ func Test_Day05_Part2(t *testing.T) {
 		}
 	}
 
-	fmt.Println(count)
+	t.Log(count)
 }

@@ -1,26 +1,27 @@
 package Day10
 
 import (
-	"fmt"
+	"bytes"
 	"strconv"
 )
 
-func lookAndSay(num int) int {
-	str := strconv.Itoa(num)
-
-	res := ""
-	temp := str[0]
+func lookAndSay(input string) string {
+	var buf bytes.Buffer
+	temp := input[0]
 	counter := 0
-	for i := 0; i < len(str); i++ {
-		counter++
-		if str[i] != temp || i == len(str) {
-			res = fmt.Sprintf("%s%d%s", res, counter, string(temp))
-			temp = str[i]
-			counter = 1
+
+	for _, char := range []byte(input) {
+		if char != temp {
+			buf.WriteString(strconv.Itoa(counter))
+			buf.WriteByte(temp)
+			counter = 0
+			temp = char
 		}
+		counter++
 	}
 
-	ret, _ := strconv.Atoi(res)
+	buf.WriteString(strconv.Itoa(counter))
+	buf.WriteByte(temp)
 
-	return ret
+	return buf.String()
 }

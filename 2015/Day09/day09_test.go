@@ -1,11 +1,11 @@
 package Day09
 
 import (
-	"adventofcode/util"
-	"fmt"
 	"strconv"
 	"strings"
 	"testing"
+
+	"adventofcode/util"
 )
 
 func Test_Day09_Part1(t *testing.T) {
@@ -22,7 +22,7 @@ func Test_Day09_Part1(t *testing.T) {
 		dm.addDistance(city1, city2, dist)
 	}
 
-	fmt.Println(dm)
+	t.Log(dm)
 }
 
 func Test_Day09_Part2(t *testing.T) {

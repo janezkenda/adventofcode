@@ -1,7 +1,6 @@
 package Day08
 
 import (
-	"fmt"
 	"testing"
 
 	"adventofcode/util"
@@ -15,7 +14,7 @@ func Test_Day08_Part1(t *testing.T) {
 		count += len(line) - unquotedLen(line)
 	}
 
-	fmt.Println(count)
+	t.Log(count)
 }
 
 func Test_Day08_Part2(t *testing.T) {
@@ -26,5 +25,5 @@ func Test_Day08_Part2(t *testing.T) {
 		count += doubleQuotedLen(line) - len(line)
 	}
 
-	fmt.Println(count)
+	t.Log(count)
 }
