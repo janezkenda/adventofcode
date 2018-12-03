@@ -7,20 +7,8 @@ import (
 )
 
 func Test_Day02_Part1(t *testing.T) {
-	double, tripple := 0, 0
 	input := util.ReadInputFromFile("input.txt")
-
-	for _, line := range input {
-		lc := NewLetterCount(line)
-		if lc.HasDouble() {
-			double++
-		}
-		if lc.HasTripple() {
-			tripple++
-		}
-	}
-
-	t.Log(double * tripple)
+	t.Log(FindChecksum(input))
 }
 
 func Test_Day02_Part2(t *testing.T) {

@@ -30,6 +30,22 @@ func (lc *lettercount) HasTripple() bool {
 	return false
 }
 
+func FindChecksum(input []string) int {
+	double, tripple := 0, 0
+
+	for _, line := range input {
+		lc := NewLetterCount(line)
+		if lc.HasDouble() {
+			double++
+		}
+		if lc.HasTripple() {
+			tripple++
+		}
+	}
+
+	return double * tripple
+}
+
 func FindSimilarIDs(input []string) string {
 	for _, line := range input {
 		for _, line2 := range input {
